@@ -5,7 +5,12 @@ public class BoundedCounter {
     private int upperLimit;
 
     public BoundedCounter(int upperLimit) {
-        this.value=0;
+        this.value = 0;
+        this.upperLimit=upperLimit;
+    }
+
+    public BoundedCounter(int upperLimit, int value) {
+        this.value = value;
         this.upperLimit=upperLimit;
     }
 
@@ -21,7 +26,7 @@ public class BoundedCounter {
     }
 
     public void setValue(int value) {
-        if(value>0 && !(value>upperLimit)){
+        if(value>=0 && !(value>upperLimit)){
             this.value = value;
         }
     }
